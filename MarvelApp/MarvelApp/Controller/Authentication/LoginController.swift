@@ -17,20 +17,20 @@ class LoginController: UIViewController {
     }()
     
     private let emailTextField: UITextField = {
-        let tf = CustomTextField(placeholder: LoginControllerConstants.email)
+        let tf = CustomTextField(placeholder: AuthenticationConstants.email)
         tf.keyboardType = .emailAddress
         return tf
     }()
     
     private let passwordTextField: UITextField = {
-        let tf = CustomTextField(placeholder: LoginControllerConstants.password)
+        let tf = CustomTextField(placeholder: AuthenticationConstants.password)
         tf.isSecureTextEntry = true
         return tf
     }()
     
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle(LoginControllerConstants.login, for: .normal)
+        button.setTitle(AuthenticationConstants.login, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         button.layer.borderColor = UIColor.white.cgColor
@@ -45,8 +45,8 @@ class LoginController: UIViewController {
     
     private let dontHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
-        button.attributedTitle(firstPart: LoginControllerConstants.registerFirst,
-                               secondPart: LoginControllerConstants.registerSecond)
+        button.attributedTitle(firstPart: AuthenticationConstants.registerFirst,
+                               secondPart: AuthenticationConstants.registerSecond)
         return button
     }()
     
@@ -74,7 +74,7 @@ class LoginController: UIViewController {
         view.addSubview(marvelLogo)
         marvelLogo.centerX(inView: view)
         marvelLogo.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 72)
-        marvelLogo.setDimensions(height: 124, width: 268)
+        marvelLogo.setDimensions(height: 124, width: 248)
         
         let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton])
         stack.axis = .vertical

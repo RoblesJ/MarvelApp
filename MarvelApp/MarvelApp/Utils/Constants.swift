@@ -7,11 +7,14 @@
 
 import Foundation
 
-struct LoginControllerConstants {
+struct AuthenticationConstants {
     static let email: String = "Email"
     static let password: String = "Password"
     static let registerFirst: String = "Don't have an account " // keep space, it looks better
     static let registerSecond: String = "Sign up"
     static let login: String = "Login"
+    static let fullname: String = "Full Name"
+    static let username: String = "Username"
+    static let signUp: String = "Sign Up"
 }
 
