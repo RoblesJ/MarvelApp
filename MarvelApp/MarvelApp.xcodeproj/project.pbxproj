@@ -27,6 +27,7 @@
 		303A3E3E27DE3F0800BC8D02 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 303A3E3D27DE3F0800BC8D02 /* FirebaseDatabase */; };
 		303A3E4127DE3F4A00BC8D02 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 303A3E4027DE3F4A00BC8D02 /* SDWebImage */; };
 		30C6FCBE27DE60E200F88ED0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCBD27DE60E200F88ED0 /* CustomTextField.swift */; };
+		30C6FCC027DED73400F88ED0 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCBF27DED73400F88ED0 /* CharacterCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		303A3E3227DE3A8900BC8D02 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		303A3E3427DE3A9000BC8D02 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		30C6FCBD27DE60E200F88ED0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		30C6FCBF27DED73400F88ED0 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				30C6FCBD27DE60E200F88ED0 /* CustomTextField.swift */,
+				30C6FCBF27DED73400F88ED0 /* CharacterCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				303A3E0E27DE37F200BC8D02 /* SceneDelegate.swift in Sources */,
 				303A3E3327DE3A8900BC8D02 /* Extensions.swift in Sources */,
 				303A3E3127DE3A4200BC8D02 /* ProfileController.swift in Sources */,
+				30C6FCC027DED73400F88ED0 /* CharacterCell.swift in Sources */,
 				30C6FCBE27DE60E200F88ED0 /* CustomTextField.swift in Sources */,
 				303A3E2B27DE399B00BC8D02 /* RegistrationController.swift in Sources */,
 				303A3E2927DE395D00BC8D02 /* LoginController.swift in Sources */,
