@@ -23,7 +23,7 @@ class CharacterController: UICollectionViewController {
     
     // MARK: - Helpers
     private func configureCollectionView() {
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .lightGray
         collectionView.register(CharacterCell.self, forCellWithReuseIdentifier: cellIdentifier)
     }
 }
@@ -51,18 +51,13 @@ extension CharacterController {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension CharacterController: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 12, left: 8, bottom: 12, right: 8)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = view.frame.width
-        let height = width / 3
+        let width = view.frame.width - 16
+        let height = view.frame.height / 5.5
         return CGSize(width: width, height: height)
     }
 }
