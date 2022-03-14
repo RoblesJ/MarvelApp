@@ -30,6 +30,8 @@
 		30C6FCC027DED73400F88ED0 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCBF27DED73400F88ED0 /* CharacterCell.swift */; };
 		30C6FCC827DF76BA00F88ED0 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCC627DF76B900F88ED0 /* EventCell.swift */; };
 		30C6FCC927DF76BA00F88ED0 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C6FCC727DF76B900F88ED0 /* EventCell.xib */; };
+		30C6FCCC27DFB49E00F88ED0 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCCB27DFB49E00F88ED0 /* ProfileCell.swift */; };
+		30C6FCCE27DFB4AB00F88ED0 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCCD27DFB4AB00F88ED0 /* ProfileHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		30C6FCBF27DED73400F88ED0 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		30C6FCC627DF76B900F88ED0 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		30C6FCC727DF76B900F88ED0 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
+		30C6FCCB27DFB49E00F88ED0 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		30C6FCCD27DFB4AB00F88ED0 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 		303A3E2027DE381200BC8D02 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				30C6FCCA27DFB47800F88ED0 /* Profile */,
 				30C6FCC327DF75EC00F88ED0 /* EventCell */,
 				30C6FCBD27DE60E200F88ED0 /* CustomTextField.swift */,
 				30C6FCBF27DED73400F88ED0 /* CharacterCell.swift */,
@@ -175,6 +180,15 @@
 				30C6FCC727DF76B900F88ED0 /* EventCell.xib */,
 			);
 			path = EventCell;
+			sourceTree = "<group>";
+		};
+		30C6FCCA27DFB47800F88ED0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				30C6FCCB27DFB49E00F88ED0 /* ProfileCell.swift */,
+				30C6FCCD27DFB4AB00F88ED0 /* ProfileHeader.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +281,9 @@
 				303A3E2627DE388800BC8D02 /* MainTabController.swift in Sources */,
 				303A3E0E27DE37F200BC8D02 /* SceneDelegate.swift in Sources */,
 				303A3E3327DE3A8900BC8D02 /* Extensions.swift in Sources */,
+				30C6FCCE27DFB4AB00F88ED0 /* ProfileHeader.swift in Sources */,
 				303A3E3127DE3A4200BC8D02 /* ProfileController.swift in Sources */,
+				30C6FCCC27DFB49E00F88ED0 /* ProfileCell.swift in Sources */,
 				30C6FCC027DED73400F88ED0 /* CharacterCell.swift in Sources */,
 				30C6FCBE27DE60E200F88ED0 /* CustomTextField.swift in Sources */,
 				303A3E2B27DE399B00BC8D02 /* RegistrationController.swift in Sources */,
