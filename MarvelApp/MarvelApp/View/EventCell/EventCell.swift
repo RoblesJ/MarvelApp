@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EventCell2TableViewCell: UITableViewCell {
+class EventCell: UITableViewCell {
 
     @IBOutlet weak var eventContainerView: UIView!
     @IBOutlet weak var eventImageView: UIImageView!
