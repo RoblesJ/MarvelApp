@@ -24,8 +24,9 @@ class MarvelEventsController: UITableViewController {
     // MARK: - Helpers
     private func configureTableView() {
         view.backgroundColor = .white
-        
-        tableView.register(EventCell.self, forCellReuseIdentifier: reuseIdentifier)
+        self.tableView.separatorStyle = .singleLine
+        tableView.register(UINib(nibName: "EventCell2TableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifier)
+//        tableView.register(EventCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
 }
 
@@ -37,7 +38,12 @@ extension MarvelEventsController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EventCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EventCell2TableViewCell
+        cell.eventImageView.image = #imageLiteral(resourceName: "1360297")
+        cell.eventImageView.contentMode = .scaleAspectFill
+        cell.eventImageView.clipsToBounds = true
+        cell.eventLabel.text = "Some event"
+        cell.descriptionLabel.text = "This will happen in the future"
         return cell
     }
     
@@ -46,4 +52,5 @@ extension MarvelEventsController {
         return rowHeight
     }
 }
+
 

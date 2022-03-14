@@ -9,6 +9,7 @@ import UIKit
 
 class EventCell: UITableViewCell {
     //MARK: - Properties
+    
     private let eventImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill

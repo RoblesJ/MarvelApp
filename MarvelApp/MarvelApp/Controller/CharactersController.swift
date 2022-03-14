@@ -23,7 +23,7 @@ class CharacterController: UICollectionViewController {
     
     // MARK: - Helpers
     private func configureCollectionView() {
-        collectionView.backgroundColor = .gray
+        collectionView.backgroundColor = .lightGray
         collectionView.register(CharacterCell.self, forCellWithReuseIdentifier: cellIdentifier)
     }
 }
