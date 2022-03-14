@@ -28,6 +28,7 @@
 		303A3E4127DE3F4A00BC8D02 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 303A3E4027DE3F4A00BC8D02 /* SDWebImage */; };
 		30C6FCBE27DE60E200F88ED0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCBD27DE60E200F88ED0 /* CustomTextField.swift */; };
 		30C6FCC027DED73400F88ED0 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCBF27DED73400F88ED0 /* CharacterCell.swift */; };
+		30C6FCC227DEE91900F88ED0 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCC127DEE91900F88ED0 /* EventCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		303A3E3427DE3A9000BC8D02 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		30C6FCBD27DE60E200F88ED0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		30C6FCBF27DED73400F88ED0 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		30C6FCC127DEE91900F88ED0 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				30C6FCBD27DE60E200F88ED0 /* CustomTextField.swift */,
 				30C6FCBF27DED73400F88ED0 /* CharacterCell.swift */,
+				30C6FCC127DEE91900F88ED0 /* EventCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				303A3E0C27DE37F200BC8D02 /* AppDelegate.swift in Sources */,
 				303A3E2627DE388800BC8D02 /* MainTabController.swift in Sources */,
 				303A3E0E27DE37F200BC8D02 /* SceneDelegate.swift in Sources */,
+				30C6FCC227DEE91900F88ED0 /* EventCell.swift in Sources */,
 				303A3E3327DE3A8900BC8D02 /* Extensions.swift in Sources */,
 				303A3E3127DE3A4200BC8D02 /* ProfileController.swift in Sources */,
 				30C6FCC027DED73400F88ED0 /* CharacterCell.swift in Sources */,
