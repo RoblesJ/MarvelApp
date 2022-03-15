@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol AuthenticationDelegate: AnyObject {
+    func authenticationDidComplete()
+}
+
 class LoginController: UIViewController {
     
     // MARK: - Propperties
+    private var loginVM = LoginViewModel()
+    weak var delegate: AuthenticationDelegate?
+    
     private let marvelLogo: UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "marvel_logo_icon_181411"))
         iv.contentMode = .scaleAspectFill
@@ -31,14 +38,14 @@ class LoginController: UIViewController {
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle(AuthenticationConstants.login, for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        button.setTitleColor(.white.withAlphaComponent(0.67), for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 2
         button.layer.cornerRadius = 12
         button.setHeight(50)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.isEnabled = true // implement
+        button.isEnabled = false
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
@@ -47,6 +54,7 @@ class LoginController: UIViewController {
         let button = UIButton(type: .system)
         button.attributedTitle(firstPart: AuthenticationConstants.registerFirst,
                                secondPart: AuthenticationConstants.registerSecond)
+        button.addTarget(self, action: #selector(handleShowSignup), for: .touchUpInside)
         return button
     }()
     
@@ -55,12 +63,38 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemPink
         configureUI()
+        configureNotificationObservers()
     }
     
     // MARK: - Actions
     @objc
     private func handleLogin() {
-        print("DEBUG: Implement sign up button.")
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        AuthService.logUserIn(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                print("DEBUG: failed to log user in \(error.localizedDescription)")
+            }
+            self.delegate?.authenticationDidComplete()
+        }
+    }
+    
+    @objc
+    private func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            loginVM.email = sender.text
+        } else {
+            loginVM.password = sender.text
+        }
+        updateForm()
+        
+    }
+    
+    @objc
+    private func handleShowSignup(){
+        let controller = RegistrationController()
+        controller.delegate = delegate
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK: - Helpers
@@ -87,5 +121,17 @@ class LoginController: UIViewController {
         dontHaveAccountButton.centerX(inView: view)
         dontHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 24, paddingRight: 24)
         
+    }
+    func configureNotificationObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+}
+
+extension LoginController: FormViewModel {
+    func updateForm() {
+        loginButton.backgroundColor = loginVM.buttonBackgroundColor
+        loginButton.setTitleColor(loginVM.buttonTitleColor, for: .normal)
+        loginButton.isEnabled = loginVM.formIsValid
     }
 }

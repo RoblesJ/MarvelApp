@@ -7,6 +7,7 @@
 
 
 import UIKit
+import Firebase
 
 private let cellIdentifier = "CharacterCell"
 
@@ -20,9 +21,23 @@ class CharacterController: UICollectionViewController {
     }
     
     // MARK: - Actions
+    @objc
+    private func handleLogOut() {
+        do {
+            try Auth.auth().signOut()
+            let controller = LoginController()
+            controller.delegate = self.tabBarController as? MainTabController
+            let nav = UINavigationController(rootViewController: controller)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        } catch {
+            print("DEBUG: failed to sign out")
+        }
+    }
     
     // MARK: - Helpers
     private func configureCollectionView() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogOut))
         collectionView.backgroundColor = .lightGray
         collectionView.register(CharacterCell.self, forCellWithReuseIdentifier: cellIdentifier)
     }
