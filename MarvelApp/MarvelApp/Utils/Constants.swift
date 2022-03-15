@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+
+let COLLECTION_USERS = Firestore.firestore().collection("users")
 
 struct AuthenticationConstants {
     static let email: String = "Email"

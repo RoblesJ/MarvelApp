@@ -34,6 +34,12 @@
 		30C6FCCE27DFB4AB00F88ED0 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCCD27DFB4AB00F88ED0 /* ProfileHeader.swift */; };
 		30C6FCD227DFCDE600F88ED0 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCD027DFCDE600F88ED0 /* CharacterDetailViewController.swift */; };
 		30C6FCD327DFCDE600F88ED0 /* CharacterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C6FCD127DFCDE600F88ED0 /* CharacterDetailViewController.xib */; };
+		30C6FCDB27E022F500F88ED0 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCDA27E022F500F88ED0 /* AuthService.swift */; };
+		30C6FCDD27E0237A00F88ED0 /* AuthCredentialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCDC27E0237A00F88ED0 /* AuthCredentialsModel.swift */; };
+		30C6FCDF27E026E200F88ED0 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCDE27E026E200F88ED0 /* AuthenticationViewModel.swift */; };
+		30C6FCE127E02DEE00F88ED0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCE027E02DEE00F88ED0 /* User.swift */; };
+		30C6FCE327E02ECD00F88ED0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30C6FCE227E02ECD00F88ED0 /* GoogleService-Info.plist */; };
+		30C6FCE527E0303F00F88ED0 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCE427E0303F00F88ED0 /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +67,12 @@
 		30C6FCCD27DFB4AB00F88ED0 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		30C6FCD027DFCDE600F88ED0 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		30C6FCD127DFCDE600F88ED0 /* CharacterDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailViewController.xib; sourceTree = "<group>"; };
+		30C6FCDA27E022F500F88ED0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		30C6FCDC27E0237A00F88ED0 /* AuthCredentialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredentialsModel.swift; sourceTree = "<group>"; };
+		30C6FCDE27E026E200F88ED0 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		30C6FCE027E02DEE00F88ED0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		30C6FCE227E02ECD00F88ED0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		30C6FCE427E0303F00F88ED0 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +123,7 @@
 				303A3E1427DE37F300BC8D02 /* Assets.xcassets */,
 				303A3E1627DE37F300BC8D02 /* LaunchScreen.storyboard */,
 				303A3E1927DE37F300BC8D02 /* Info.plist */,
+				30C6FCE227E02ECD00F88ED0 /* GoogleService-Info.plist */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";
@@ -118,6 +131,8 @@
 		303A3E1F27DE380A00BC8D02 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				30C6FCDC27E0237A00F88ED0 /* AuthCredentialsModel.swift */,
+				30C6FCE027E02DEE00F88ED0 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,6 +152,7 @@
 		303A3E2127DE381600BC8D02 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				30C6FCDE27E026E200F88ED0 /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -156,6 +172,8 @@
 		303A3E2327DE382200BC8D02 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				30C6FCDA27E022F500F88ED0 /* AuthService.swift */,
+				30C6FCE427E0303F00F88ED0 /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -277,6 +295,7 @@
 				303A3E1827DE37F300BC8D02 /* LaunchScreen.storyboard in Resources */,
 				303A3E1527DE37F300BC8D02 /* Assets.xcassets in Resources */,
 				303A3E1327DE37F200BC8D02 /* Main.storyboard in Resources */,
+				30C6FCE327E02ECD00F88ED0 /* GoogleService-Info.plist in Resources */,
 				30C6FCC927DF76BA00F88ED0 /* EventCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,8 +310,11 @@
 				303A3E1027DE37F200BC8D02 /* ViewController.swift in Sources */,
 				303A3E3527DE3A9000BC8D02 /* Constants.swift in Sources */,
 				30C6FCC827DF76BA00F88ED0 /* EventCell.swift in Sources */,
+				30C6FCDB27E022F500F88ED0 /* AuthService.swift in Sources */,
 				303A3E2D27DE39FF00BC8D02 /* CharactersController.swift in Sources */,
 				303A3E0C27DE37F200BC8D02 /* AppDelegate.swift in Sources */,
+				30C6FCE527E0303F00F88ED0 /* UserService.swift in Sources */,
+				30C6FCDD27E0237A00F88ED0 /* AuthCredentialsModel.swift in Sources */,
 				303A3E2627DE388800BC8D02 /* MainTabController.swift in Sources */,
 				303A3E0E27DE37F200BC8D02 /* SceneDelegate.swift in Sources */,
 				303A3E3327DE3A8900BC8D02 /* Extensions.swift in Sources */,
@@ -302,9 +324,11 @@
 				30C6FCCC27DFB49E00F88ED0 /* ProfileCell.swift in Sources */,
 				30C6FCC027DED73400F88ED0 /* CharacterCell.swift in Sources */,
 				30C6FCBE27DE60E200F88ED0 /* CustomTextField.swift in Sources */,
+				30C6FCDF27E026E200F88ED0 /* AuthenticationViewModel.swift in Sources */,
 				303A3E2B27DE399B00BC8D02 /* RegistrationController.swift in Sources */,
 				303A3E2927DE395D00BC8D02 /* LoginController.swift in Sources */,
 				303A3E2F27DE3A2500BC8D02 /* MarvelEventsController.swift in Sources */,
+				30C6FCE127E02DEE00F88ED0 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
