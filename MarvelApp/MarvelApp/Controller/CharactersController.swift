@@ -45,7 +45,10 @@ extension CharacterController {
 // MARK: - UICollectionViewDelegate
 
 extension CharacterController {
-    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detail = DetailModel(character: CharacterDetailConstants.character, characterImage: CharacterDetailConstants.characterImage, characterText: CharacterDetailConstants.characterText, appearanceText: CharacterDetailConstants.appearanceText, comicText: CharacterDetailConstants.comicText)
+        self.navigationController?.pushViewController(CharacterDetailViewController(detail: detail), animated: true)
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout

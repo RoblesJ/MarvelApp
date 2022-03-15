@@ -32,6 +32,8 @@
 		30C6FCC927DF76BA00F88ED0 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C6FCC727DF76B900F88ED0 /* EventCell.xib */; };
 		30C6FCCC27DFB49E00F88ED0 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCCB27DFB49E00F88ED0 /* ProfileCell.swift */; };
 		30C6FCCE27DFB4AB00F88ED0 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCCD27DFB4AB00F88ED0 /* ProfileHeader.swift */; };
+		30C6FCD227DFCDE600F88ED0 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCD027DFCDE600F88ED0 /* CharacterDetailViewController.swift */; };
+		30C6FCD327DFCDE600F88ED0 /* CharacterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C6FCD127DFCDE600F88ED0 /* CharacterDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		30C6FCC727DF76B900F88ED0 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		30C6FCCB27DFB49E00F88ED0 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		30C6FCCD27DFB4AB00F88ED0 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		30C6FCD027DFCDE600F88ED0 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		30C6FCD127DFCDE600F88ED0 /* CharacterDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 		303A3E2027DE381200BC8D02 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				30C6FCCF27DFCDA600F88ED0 /* CharacterDetail */,
 				30C6FCCA27DFB47800F88ED0 /* Profile */,
 				30C6FCC327DF75EC00F88ED0 /* EventCell */,
 				30C6FCBD27DE60E200F88ED0 /* CustomTextField.swift */,
@@ -191,6 +196,15 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		30C6FCCF27DFCDA600F88ED0 /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				30C6FCD027DFCDE600F88ED0 /* CharacterDetailViewController.swift */,
+				30C6FCD127DFCDE600F88ED0 /* CharacterDetailViewController.xib */,
+			);
+			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -259,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C6FCD327DFCDE600F88ED0 /* CharacterDetailViewController.xib in Resources */,
 				303A3E1827DE37F300BC8D02 /* LaunchScreen.storyboard in Resources */,
 				303A3E1527DE37F300BC8D02 /* Assets.xcassets in Resources */,
 				303A3E1327DE37F200BC8D02 /* Main.storyboard in Resources */,
@@ -282,6 +297,7 @@
 				303A3E0E27DE37F200BC8D02 /* SceneDelegate.swift in Sources */,
 				303A3E3327DE3A8900BC8D02 /* Extensions.swift in Sources */,
 				30C6FCCE27DFB4AB00F88ED0 /* ProfileHeader.swift in Sources */,
+				30C6FCD227DFCDE600F88ED0 /* CharacterDetailViewController.swift in Sources */,
 				303A3E3127DE3A4200BC8D02 /* ProfileController.swift in Sources */,
 				30C6FCCC27DFB49E00F88ED0 /* ProfileCell.swift in Sources */,
 				30C6FCC027DED73400F88ED0 /* CharacterCell.swift in Sources */,
