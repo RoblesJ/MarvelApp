@@ -123,6 +123,9 @@ class RegistrationController: UIViewController {
         view.addSubview(stack)
         stack.center(inView: view)
         stack.anchor(left: view.leftAnchor, right: view.rightAnchor, paddingLeft: 24, paddingRight: 24)
+        
+        view.addSubview(alreadyHaveAccountButton)
+        alreadyHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 24, paddingRight: 24)
     }
     
     func configureNotificationObservers() {
