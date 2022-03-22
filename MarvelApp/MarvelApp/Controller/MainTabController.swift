@@ -50,7 +50,6 @@ class MainTabController: UITabBarController {
     private func configureViewControllers(withUser user: User) {
         view.backgroundColor = .white
         
-        
         let layout = UICollectionViewFlowLayout()
         let characters = templateNavigationController(unselectedImage: MainTabControllerConstants.characterIconUnfilled,
                                                       selectedImage: MainTabControllerConstants.characterIconFilled,

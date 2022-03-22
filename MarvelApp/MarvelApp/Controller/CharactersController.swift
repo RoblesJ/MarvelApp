@@ -12,12 +12,16 @@ import Firebase
 private let cellIdentifier = "CharacterCell"
 
 class CharacterController: UICollectionViewController {
+    
     // MARK: - Propperties
+    private var apiDataManager: MarvelAPIDataManagerProtocol = MarvelApiDataManager()
+    var listVM = MarvelCharacterListViewModel()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        fetchData()
     }
     
     // MARK: - Actions
@@ -36,6 +40,23 @@ class CharacterController: UICollectionViewController {
     }
     
     // MARK: - Helpers
+    private func fetchData() {
+        self.apiDataManager.fetch { [weak self] response in
+            guard let strongSelf = self else { return }
+            switch response {
+            case .failure(let error):
+                print("\(error.localizedDescription)")
+            case.success(let result):
+                let characters = result.data.results.map( { MarvelCharacterViewModel(character: $0) } )
+                strongSelf.listVM.characters = characters
+                print("\(characters.count)")
+                DispatchQueue.main.async {
+                    strongSelf.collectionView.reloadData()
+                }
+            }
+        }
+    }
+    
     private func configureCollectionView() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogOut))
         collectionView.backgroundColor = .lightGray
@@ -46,13 +67,18 @@ class CharacterController: UICollectionViewController {
 // MARK: - UICollectionViewDataSource
 
 extension CharacterController {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return listVM.numberOfSections
+    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 24
+        return listVM.numberOfRowsInSection
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CharacterCell
+        let character = listVM.characterAtIndex(indexPath.row)
+        cell.configure(withCharacter: character)
         return cell
     }
 }
@@ -61,7 +87,7 @@ extension CharacterController {
 
 extension CharacterController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detail = DetailModel(character: CharacterDetailConstants.character, characterImage: CharacterDetailConstants.characterImage, characterText: CharacterDetailConstants.characterText, appearanceText: CharacterDetailConstants.appearanceText, comicText: CharacterDetailConstants.comicText)
+        let detail = listVM.characters[indexPath.row]
         self.navigationController?.pushViewController(CharacterDetailViewController(detail: detail), animated: true)
     }
 }

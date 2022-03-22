@@ -6,13 +6,13 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CharacterCell: UICollectionViewCell {
     
     // MARK - Properties
     private let postImageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = #imageLiteral(resourceName: "1360297")
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         return iv
@@ -20,14 +20,12 @@ class CharacterCell: UICollectionViewCell {
     
     private let characterLabel: UILabel = {
         let label = UILabel()
-        label.text = "hero name".capitalized
         label.font = UIFont.boldSystemFont(ofSize: 24)
         return label
     }()
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "someone who is very incredible and likes to put very long texts to make sure it will not be unreadable"
         label.numberOfLines = 3
         return label
     }()
@@ -36,7 +34,6 @@ class CharacterCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
-        
         configureBorders()
         
         contentView.addSubview(postImageView)
@@ -58,7 +55,13 @@ class CharacterCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureBorders() {
+    func configure(withCharacter character: MarvelCharacterViewModel) {
+        self.postImageView.sd_setImage(with: character.characterImg)
+        self.characterLabel.text = character.characterName
+        self.descriptionLabel.text = character.characterDescription
+    }
+    
+    private func configureBorders() {
         self.layer.borderColor = UIColor.clear.cgColor
         self.layer.borderWidth = 1
         self.layer.cornerRadius = 18

@@ -17,7 +17,7 @@ struct DetailModel {
 }
 
 class CharacterDetailViewController: UIViewController {
-//MARK: - Properties
+    //MARK: - Properties
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
@@ -26,12 +26,12 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var appearanceLabel: UILabel!
     @IBOutlet weak var comicDescription: UILabel!
     
-    private var detailModel: DetailModel
+    private var characterVM: MarvelCharacterViewModel
     
-    init(detail: DetailModel) {
-        self.detailModel = detail
+    init(detail: MarvelCharacterViewModel) {
+        self.characterVM = detail
         super.init(nibName: "CharacterDetailViewController", bundle: Bundle.main)
-
+        
     }
     
     required init?(coder: NSCoder) {
@@ -40,12 +40,14 @@ class CharacterDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         configureUI()
+        configureUI()
         populateData()
         
     }
-//MARK: - Helpers
+    //MARK: - Helpers
     private func configureUI() {
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         self.imageView.contentMode = .scaleAspectFill
         self.imageView.clipsToBounds = true
         self.characterLabel.textAlignment = .center
@@ -57,10 +59,11 @@ class CharacterDetailViewController: UIViewController {
         self.comicDescription.font = UIFont.systemFont(ofSize: 18)
     }
     private func populateData() {
-        self.navigationController?.title = detailModel.character
-        self.imageView.image = detailModel.characterImage
-        self.characterLabel.text = detailModel.characterText
-        self.appearanceLabel.text = detailModel.appearanceText
-        self.comicDescription.text = detailModel.comicText
+        print(characterVM.characterImg?.absoluteString)
+        self.navigationItem.title = characterVM.characterName
+        self.imageView.sd_setImage(with: characterVM.characterImg)
+        self.characterLabel.text = characterVM.characterDescription
+        self.appearanceLabel.text = characterVM.appearanceTitle
+        self.comicDescription.text = characterVM.comicAppearances
     }
 }
