@@ -17,6 +17,7 @@ class ProfileCell: UICollectionViewCell {
         iv.clipsToBounds = true
         return iv
     }()
+    
     // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)

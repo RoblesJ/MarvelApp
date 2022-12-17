@@ -9,7 +9,7 @@ import Foundation
 
 struct MarvelCharacterViewModel {
     
-    var character: MarvelCharacter
+    let character: MarvelCharacter
     
     var characterName: String {
         return character.name
