@@ -23,15 +23,16 @@ class CustomTextField: UITextField {
         keyboardType = .emailAddress
         backgroundColor = UIColor(white: 1, alpha: 1)
         setHeight(50)
-        attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [.foregroundColor: UIColor.gray.withAlphaComponent(0.75)])
-        
-        
+        attributedPlaceholder = NSAttributedString(
+            string: placeholder,
+            attributes: [.foregroundColor: UIColor.gray.withAlphaComponent(0.75)]
+        )
+
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
 }
 

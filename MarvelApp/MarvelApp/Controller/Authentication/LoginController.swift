@@ -46,7 +46,7 @@ class LoginController: UIViewController {
         button.setHeight(50)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.isEnabled = false
-        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        button.addTarget(LoginController.self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -54,7 +54,7 @@ class LoginController: UIViewController {
         let button = UIButton(type: .system)
         button.attributedTitle(firstPart: AuthenticationConstants.registerFirst,
                                secondPart: AuthenticationConstants.registerSecond)
-        button.addTarget(self, action: #selector(handleShowSignup), for: .touchUpInside)
+        button.addTarget(LoginController.self, action: #selector(handleShowSignup), for: .touchUpInside)
         return button
     }()
     
@@ -115,11 +115,15 @@ class LoginController: UIViewController {
         stack.spacing = 24
         
         view.addSubview(stack)
-        stack.anchor(top: marvelLogo.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 24, paddingLeft: 32, paddingRight: 24)
+        stack.anchor(top: marvelLogo.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
+                     paddingTop: 24, paddingLeft: 32, paddingRight: 24)
         
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.centerX(inView: view)
-        dontHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 24, paddingRight: 24)
+        dontHaveAccountButton.anchor(left: view.leftAnchor,
+                                     bottom: view.safeAreaLayoutGuide.bottomAnchor,
+                                     right: view.rightAnchor,
+                                     paddingLeft: 24, paddingRight: 24)
         
     }
     func configureNotificationObservers() {

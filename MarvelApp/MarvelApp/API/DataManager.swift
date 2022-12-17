@@ -21,7 +21,7 @@ protocol MarvelAPIDataManagerProtocol {
 final class MarvelApiDataManager: MarvelAPIDataManagerProtocol {
     var network: NetworkingProtocol = Networking()
     func fetch(_ completion: @escaping (Result<MarvelResponse, Error>) -> Void) {
-        self.network.execute(URL_REQUEST, completion: completion)
+        self.network.execute(CHARACTER_REQUEST, completion: completion)
     }
 
     
