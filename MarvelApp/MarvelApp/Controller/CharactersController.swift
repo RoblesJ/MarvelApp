@@ -58,7 +58,10 @@ class CharacterController: UICollectionViewController {
     }
     
     private func configureCollectionView() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogOut))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout",
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(handleLogOut))
         collectionView.backgroundColor = .lightGray
         collectionView.register(CharacterCell.self, forCellWithReuseIdentifier: cellIdentifier)
     }
@@ -75,7 +78,10 @@ extension CharacterController {
         return listVM.numberOfRowsInSection
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CharacterCell
         let character = listVM.characterAtIndex(indexPath.row)
         cell.configure(withCharacter: character)
@@ -95,11 +101,19 @@ extension CharacterController {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension CharacterController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAt section: Int
+    ) -> UIEdgeInsets {
         return UIEdgeInsets(top: 12, left: 8, bottom: 12, right: 8)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
         let width = view.frame.width - 16
         let height = view.frame.height / 5.5
         return CGSize(width: width, height: height)

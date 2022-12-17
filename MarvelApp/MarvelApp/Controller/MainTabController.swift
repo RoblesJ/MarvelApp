@@ -35,6 +35,7 @@ class MainTabController: UITabBarController {
             print("DEBUG: finished fetching user")
         }
     }
+    
     private func checkIfUserIsLoggedIn() {
         if Auth.auth().currentUser == nil {
             DispatchQueue.main.async {
@@ -72,7 +73,11 @@ class MainTabController: UITabBarController {
     ///   - selectedImage: UIImage to show when tab is selected
     ///   - rootViewController: Destination VC
     /// - Returns: UINavigationController
-    private func templateNavigationController(unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController) -> UINavigationController {
+    private func templateNavigationController(
+        unselectedImage: UIImage,
+        selectedImage: UIImage,
+        rootViewController: UIViewController
+    ) -> UINavigationController {
         let nav = UINavigationController(rootViewController: rootViewController)
         nav.tabBarItem.image = unselectedImage
         nav.tabBarItem.selectedImage = selectedImage

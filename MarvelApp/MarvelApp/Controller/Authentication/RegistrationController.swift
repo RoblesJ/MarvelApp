@@ -51,14 +51,14 @@ class RegistrationController: UIViewController {
         button.setHeight(50)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.isEnabled = false
-        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
+        button.addTarget(RegistrationController.self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
     
     private let alreadyHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
         button.attributedTitle(firstPart: "Already have an account? ", secondPart: "Log In")
-        button.addTarget(self, action: #selector(handleShowLogin), for: .touchUpInside)
+        button.addTarget(RegistrationController.self, action: #selector(handleShowLogin), for: .touchUpInside)
         return button
     }()
     
@@ -116,16 +116,27 @@ class RegistrationController: UIViewController {
         marvelLogo.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 72)
         marvelLogo.setDimensions(height: 124, width: 248)
         
-        let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, fullnameTextField, usernameTextField, signUpButton])
+        let stack = UIStackView(
+            arrangedSubviews: [emailTextField,
+                               passwordTextField,
+                               fullnameTextField,
+                               usernameTextField,
+                               signUpButton]
+        )
         stack.axis = .vertical
         stack.spacing = 24
         
         view.addSubview(stack)
         stack.center(inView: view)
-        stack.anchor(left: view.leftAnchor, right: view.rightAnchor, paddingLeft: 24, paddingRight: 24)
+        stack.anchor(left: view.leftAnchor,
+                     right: view.rightAnchor,
+                     paddingLeft: 24, paddingRight: 24)
         
         view.addSubview(alreadyHaveAccountButton)
-        alreadyHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 24, paddingRight: 24)
+        alreadyHaveAccountButton.anchor(left: view.leftAnchor,
+                                        bottom: view.safeAreaLayoutGuide.bottomAnchor,
+                                        right: view.rightAnchor,
+                                        paddingLeft: 24, paddingRight: 24)
     }
     
     func configureNotificationObservers() {

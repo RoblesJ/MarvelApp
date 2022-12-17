@@ -11,12 +11,16 @@ import Firebase
 let COLLECTION_USERS = Firestore.firestore().collection("users")
 
 private let BASE_URL: String = "http://gateway.marvel.com/v1/public/characters"
+private let CHARACTERS_ENDPOINT: String = "v1/public/characters"
+private let EVENT_ENDPOINT: String = "v1/public/events"
+
+
 private let API_PRIVATE_KEY: String = "c8b26c29c036f11155263f409048519de0970fcf"
 private let API_PUBLIC_KEY: String = "31fd879d14eb087e05f89adf22fa2944"
 private let HASH: String = "6b0a13b934d4a2d97eb3c6f67d7e5637"
 private let TS: Int = 1
-let URL_REQUEST: String = "\(BASE_URL)?apikey=\(API_PUBLIC_KEY)&ts=\(TS)&hash=\(HASH)"
-
+let CHARACTER_REQUEST: String = "\(BASE_URL)\(CHARACTERS_ENDPOINT)?apikey=\(API_PUBLIC_KEY)&ts=\(TS)&hash=\(HASH)"
+let EVENTS_REQUEST: String = "\(BASE_URL)\(EVENT_ENDPOINT)?apikey=\(API_PUBLIC_KEY)&ts=\(TS)&hash=\(HASH)"
 
 struct AuthenticationConstants {
     static let email: String = "Email"
