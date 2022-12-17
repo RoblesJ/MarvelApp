@@ -44,6 +44,7 @@
 		30C6FCE127E02DEE00F88ED0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCE027E02DEE00F88ED0 /* User.swift */; };
 		30C6FCE527E0303F00F88ED0 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCE427E0303F00F88ED0 /* UserService.swift */; };
 		AFFF5A9C294D3A6A00F46725 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFFF5A9B294D3A6A00F46725 /* GoogleService-Info.plist */; };
+		AFFF5A9E294D562700F46725 /* EventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFF5A9D294D562700F46725 /* EventResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		30C6FCE027E02DEE00F88ED0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		30C6FCE427E0303F00F88ED0 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		AFFF5A9B294D3A6A00F46725 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AFFF5A9D294D562700F46725 /* EventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				30C6FCDC27E0237A00F88ED0 /* AuthCredentialsModel.swift */,
 				30C6FCE027E02DEE00F88ED0 /* User.swift */,
 				30B0725E27E7F291003B14AA /* MarvelResponse.swift */,
+				AFFF5A9D294D562700F46725 /* EventResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				30C6FCCC27DFB49E00F88ED0 /* ProfileCell.swift in Sources */,
 				30C6FCC027DED73400F88ED0 /* CharacterCell.swift in Sources */,
 				30C6FCBE27DE60E200F88ED0 /* CustomTextField.swift in Sources */,
+				AFFF5A9E294D562700F46725 /* EventResponse.swift in Sources */,
 				30C6FCDF27E026E200F88ED0 /* AuthenticationViewModel.swift in Sources */,
 				303A3E2B27DE399B00BC8D02 /* RegistrationController.swift in Sources */,
 				303A3E2927DE395D00BC8D02 /* LoginController.swift in Sources */,

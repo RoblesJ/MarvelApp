@@ -10,7 +10,7 @@ import Firebase
 
 let COLLECTION_USERS = Firestore.firestore().collection("users")
 
-private let BASE_URL: String = "http://gateway.marvel.com/v1/public/characters"
+private let BASE_URL: String = "http://gateway.marvel.com/"
 private let CHARACTERS_ENDPOINT: String = "v1/public/characters"
 private let EVENT_ENDPOINT: String = "v1/public/events"
 
