@@ -59,7 +59,6 @@ class CharacterDetailViewController: UIViewController {
         self.comicDescription.font = UIFont.systemFont(ofSize: 18)
     }
     private func populateData() {
-        print(characterVM.characterImg?.absoluteString)
         self.navigationItem.title = characterVM.characterName
         self.imageView.sd_setImage(with: characterVM.characterImg)
         self.characterLabel.text = characterVM.characterDescription

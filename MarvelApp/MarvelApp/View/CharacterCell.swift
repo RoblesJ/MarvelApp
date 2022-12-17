@@ -38,7 +38,10 @@ class CharacterCell: UICollectionViewCell {
         
         contentView.addSubview(postImageView)
         let postImageWidth = contentView.frame.height - 4
-        postImageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, paddingTop: 2, paddingLeft: 2, paddingBottom: 2)
+        postImageView.anchor(top: topAnchor,
+                             left: leftAnchor,
+                             bottom: bottomAnchor,
+                             paddingTop: 2, paddingLeft: 2, paddingBottom: 2)
         postImageView.setDimensions(height: postImageWidth, width: postImageWidth)
         
         let stack = UIStackView(arrangedSubviews: [characterLabel, descriptionLabel])
@@ -47,7 +50,11 @@ class CharacterCell: UICollectionViewCell {
         stack.distribution = .fillProportionally
         
         contentView.addSubview(stack)
-        stack.anchor(top: contentView.topAnchor, left: postImageView.rightAnchor, bottom: contentView.bottomAnchor, right: contentView.rightAnchor, paddingTop: 16, paddingLeft: 2, paddingBottom: 16, paddingRight: 8)
+        stack.anchor(top: contentView.topAnchor,
+                     left: postImageView.rightAnchor,
+                     bottom: contentView.bottomAnchor,
+                     right: contentView.rightAnchor,
+                     paddingTop: 16, paddingLeft: 2, paddingBottom: 16, paddingRight: 8)
         
     }
     
