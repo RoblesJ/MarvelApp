@@ -18,6 +18,11 @@ protocol MarvelAPIDataManagerProtocol {
     func fetch(_ completion: @escaping (Result<MarvelResponse, Error>) -> Void)
 }
 
+protocol EventsAPIDataManagerProtocol {
+    var network: NetworkingProtocol { get set }
+    func fetch(_ completion: @escaping(Result<EventResponse, Error>) -> Void)
+}
+
 final class MarvelApiDataManager: MarvelAPIDataManagerProtocol {
     var network: NetworkingProtocol = Networking()
     func fetch(_ completion: @escaping (Result<MarvelResponse, Error>) -> Void) {
@@ -25,6 +30,15 @@ final class MarvelApiDataManager: MarvelAPIDataManagerProtocol {
     }
 
     
+    final class Networking: NetworkingProtocol { }
+}
+
+final class EventsApiDataManager: EventsAPIDataManagerProtocol {
+    var network: NetworkingProtocol = Networking()
+    func fetch(_ completion: @escaping (Result<EventResponse, Error>) -> Void) {
+        self.network.execute(EVENTS_REQUEST, completion: completion)
+    }
+
     final class Networking: NetworkingProtocol { }
 }
 

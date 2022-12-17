@@ -18,7 +18,7 @@ class EventCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        configure()
+        configureLayers()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,7 +26,16 @@ class EventCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func configure() {
+
+    func configure(withEvent event: MarvelEventViewModel) {
+        self.descriptionLabel.text = event.startDate
+        self.eventImageView.sd_setImage(with: event.eventImg)
+        self.eventImageView.contentMode = .scaleAspectFill
+        self.eventImageView.clipsToBounds = true
+        self.eventLabel.text = event.title
+    }
+
+    private func configureLayers() {
         eventContainerView.layer.borderColor = UIColor.clear.cgColor
         eventContainerView.layer.borderWidth = 1
         eventContainerView.layer.cornerRadius = 15
