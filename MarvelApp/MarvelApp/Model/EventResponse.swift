@@ -21,7 +21,7 @@ struct DataClass: Codable {
 struct Event: Codable {
     let id: Int
     let title: String
-    let start: String
+    let start: String?
     let thumbnail: Thumbnail
     let comics: Characters
 
@@ -32,20 +32,16 @@ struct Event: Codable {
 
 // MARK: - Characters
 struct Characters: Codable {
-    let items: [String]
+    let items: [Next]
 }
+
+// MARK: - Next
+struct Next: Codable {
+    let name: String
+}
+
 
 // MARK: - Thumbnail
 struct Thumbnail: Codable {
     let path: String
-    let thumbnailExtension: Extension
-
-    enum CodingKeys: String, CodingKey {
-        case path
-        case thumbnailExtension = "extension"
-    }
-}
-
-enum Extension: String, Codable {
-    case jpg = "jpg"
 }

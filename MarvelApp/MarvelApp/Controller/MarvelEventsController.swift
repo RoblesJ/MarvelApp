@@ -14,21 +14,39 @@ private extension String {
 
 class MarvelEventsController: UITableViewController {
     // MARK: - Propperties
-    
+    private var apiDataManager: EventsAPIDataManagerProtocol = EventsApiDataManager()
+    var eventVM = MarvelEventListViewModel()
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        fetchData()
     }
     
     // MARK: - Actions
+
+    private func fetchData() {
+        self.apiDataManager.fetch { [weak self] response in
+            guard let strongSelf = self else { return }
+            switch response {
+            case .failure(let error):
+                print("\(error.localizedDescription)")
+            case.success(let result):
+                let events = result.data.results.map( { MarvelEventViewModel(event: $0) } )
+                strongSelf.eventVM.events = events
+                DispatchQueue.main.async {
+                    strongSelf.tableView.reloadData()
+                }
+            }
+        }
+    }
     
     // MARK: - Helpers
     private func configureTableView() {
         view.backgroundColor = .white
         self.tableView.separatorStyle = .singleLine
         tableView.register(UINib(nibName: .cellName, bundle: nil), forCellReuseIdentifier: .reuseIdentifier)
-//        tableView.register(EventCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
 }
 
@@ -36,16 +54,12 @@ class MarvelEventsController: UITableViewController {
 extension MarvelEventsController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return eventVM.numberOfRowsInSection
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: .reuseIdentifier, for: indexPath) as! EventCell
-        cell.eventImageView.image = #imageLiteral(resourceName: "1360297")
-        cell.eventImageView.contentMode = .scaleAspectFill
-        cell.eventImageView.clipsToBounds = true
-        cell.eventLabel.text = "Some event"
-        cell.descriptionLabel.text = "This will happen in the future"
+        cell.configure(withEvent: eventVM.eventAtIndex(indexPath.row))
         return cell
     }
     
