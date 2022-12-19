@@ -46,7 +46,7 @@ class LoginController: UIViewController {
         button.setHeight(50)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.isEnabled = false
-        button.addTarget(LoginController.self, action: #selector(handleLogin), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -54,7 +54,7 @@ class LoginController: UIViewController {
         let button = UIButton(type: .system)
         button.attributedTitle(firstPart: AuthenticationConstants.registerFirst,
                                secondPart: AuthenticationConstants.registerSecond)
-        button.addTarget(LoginController.self, action: #selector(handleShowSignup), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleShowSignup), for: .touchUpInside)
         return button
     }()
     
