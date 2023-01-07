@@ -38,7 +38,7 @@ class EventCell: UITableViewCell {
     private func configureLayers() {
         eventContainerView.layer.borderColor = UIColor.clear.cgColor
         eventContainerView.layer.borderWidth = 1
-        eventContainerView.layer.cornerRadius = 15
+        eventContainerView.layer.cornerRadius = 16
         eventContainerView.layer.masksToBounds = true
     }
 }

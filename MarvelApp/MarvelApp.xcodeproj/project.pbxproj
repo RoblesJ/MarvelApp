@@ -43,6 +43,8 @@
 		30C6FCDF27E026E200F88ED0 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCDE27E026E200F88ED0 /* AuthenticationViewModel.swift */; };
 		30C6FCE127E02DEE00F88ED0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCE027E02DEE00F88ED0 /* User.swift */; };
 		30C6FCE527E0303F00F88ED0 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6FCE427E0303F00F88ED0 /* UserService.swift */; };
+		AF54A0DB295B212A002073CB /* EventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54A0DA295B212A002073CB /* EventDetail.swift */; };
+		AF54A0DE295B229B002073CB /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54A0DD295B229B002073CB /* AsyncImage.swift */; };
 		AFFF5A9C294D3A6A00F46725 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFFF5A9B294D3A6A00F46725 /* GoogleService-Info.plist */; };
 		AFFF5A9E294D562700F46725 /* EventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFF5A9D294D562700F46725 /* EventResponse.swift */; };
 		AFFF8491294D5B8700B09100 /* MarvelEventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFF8490294D5B8700B09100 /* MarvelEventListViewModel.swift */; };
@@ -83,6 +85,8 @@
 		30C6FCDE27E026E200F88ED0 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		30C6FCE027E02DEE00F88ED0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		30C6FCE427E0303F00F88ED0 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		AF54A0DA295B212A002073CB /* EventDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetail.swift; sourceTree = "<group>"; };
+		AF54A0DD295B229B002073CB /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		AFFF5A9B294D3A6A00F46725 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AFFF5A9D294D562700F46725 /* EventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventResponse.swift; sourceTree = "<group>"; };
 		AFFF8490294D5B8700B09100 /* MarvelEventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelEventListViewModel.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 		303A3E2027DE381200BC8D02 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AF54A0D9295B208A002073CB /* EventDetail */,
 				30C6FCCF27DFCDA600F88ED0 /* CharacterDetail */,
 				30C6FCCA27DFB47800F88ED0 /* Profile */,
 				30C6FCC327DF75EC00F88ED0 /* EventCell */,
@@ -202,6 +207,7 @@
 		303A3E2427DE382700BC8D02 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AF54A0DC295B2289002073CB /* Views */,
 				303A3E3227DE3A8900BC8D02 /* Extensions.swift */,
 				303A3E3427DE3A9000BC8D02 /* Constants.swift */,
 			);
@@ -242,6 +248,22 @@
 				30C6FCD127DFCDE600F88ED0 /* CharacterDetailViewController.xib */,
 			);
 			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
+		AF54A0D9295B208A002073CB /* EventDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AF54A0DA295B212A002073CB /* EventDetail.swift */,
+			);
+			path = EventDetail;
+			sourceTree = "<group>";
+		};
+		AF54A0DC295B2289002073CB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF54A0DD295B229B002073CB /* AsyncImage.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,10 +369,12 @@
 				303A3E3327DE3A8900BC8D02 /* Extensions.swift in Sources */,
 				30C6FCCE27DFB4AB00F88ED0 /* ProfileHeader.swift in Sources */,
 				30C6FCD227DFCDE600F88ED0 /* CharacterDetailViewController.swift in Sources */,
+				AF54A0DE295B229B002073CB /* AsyncImage.swift in Sources */,
 				303A3E3127DE3A4200BC8D02 /* ProfileController.swift in Sources */,
 				30C6FCCC27DFB49E00F88ED0 /* ProfileCell.swift in Sources */,
 				30C6FCC027DED73400F88ED0 /* CharacterCell.swift in Sources */,
 				30C6FCBE27DE60E200F88ED0 /* CustomTextField.swift in Sources */,
+				AF54A0DB295B212A002073CB /* EventDetail.swift in Sources */,
 				AFFF5A9E294D562700F46725 /* EventResponse.swift in Sources */,
 				30C6FCDF27E026E200F88ED0 /* AuthenticationViewModel.swift in Sources */,
 				303A3E2B27DE399B00BC8D02 /* RegistrationController.swift in Sources */,

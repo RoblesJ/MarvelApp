@@ -5,8 +5,9 @@
 //  Created by Julio Ismael Robles on 13/03/2022.
 //
 
-
 import UIKit
+import SwiftUI
+
 private extension String {
     static let reuseIdentifier = "EventCell"
     static let cellName = "EventCell"
@@ -69,4 +70,10 @@ extension MarvelEventsController {
     }
 }
 
-
+extension MarvelEventsController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detail = eventVM.events[indexPath.row]
+        let hosting = UIHostingController(rootView: EventDetail(event: detail))
+        self.navigationController?.pushViewController(hosting, animated: true)
+    }
+}
