@@ -18,7 +18,11 @@ struct MarvelEventViewModel {
         event.start ?? ""
     }
 
-    var eventImg: URL? {
-        return URL(string: "\(event.thumbnail.path).jpg")
+    var eventImg: URL {
+        URL(string: "\(event.thumbnail.path).jpg")!
+    }
+
+    var comics: [String] {
+        event.comics.items.map { $0.name }
     }
 }
